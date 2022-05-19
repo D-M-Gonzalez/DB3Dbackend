@@ -24,7 +24,7 @@ export const logInUser = async (req, res) => {
 
       if (checkUser && checkPassword) {
         response.setStatusMessage(200);
-        checkUser.user_name === "naomi.quiroz.purizaca@gmail.com" ?  //If user is admin, send a token to the client
+        checkUser.user_name === "dami.m.gonza@gmail.com" ?  //If user is admin, send a token to the client
         response.setData(checkUser, token) : 
         response.setData(checkUser);
       } else {
