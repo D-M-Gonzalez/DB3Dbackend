@@ -1,0 +1,72 @@
+###
+POST http://localhost:8000/api/products
+Content-Type: application/json
+
+{
+    "name": "Ford Ka",
+    "category": "Sedan",
+    "description": "un auto mas moderno",
+    "image_url": "algo",
+    "price": 8000,
+    "brand": {
+        "brand_name": "ford"
+    }
+
+}
+
+###
+GET http://localhost:8000/api/products?page=2&size=5&category=ALL&subcategory=ALL&search=
+
+###
+GET http://localhost:8000/api/images
+
+###
+GET http://localhost:8000/api/products
+
+###
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "user_name": "naomi.quiroz.purizaca@gmail.com",
+    "password": "NQ9951-CH"
+}
+
+###
+GET http://localhost:8000/api/users
+
+###
+DELETE http://localhost:8000/api/users/623639d8f45cc1368422ad7a
+
+###
+PUT http://localhost:8000/api/users/62363a28f45cc1368422ad81
+Content-Type: application/json
+
+{
+    "password": "123456"
+}
+
+###
+POST http://localhost:8000/api/users/login/user
+Content-Type: application/json
+
+{
+    "user_name": "naomi.quiroz.purizaca@gmail.com",
+    "password": "NQ9951-CH"
+}
+
+
+https://regalitosnao-backend.herokuapp.com/
+
+###
+POST https://regalitosnao-backend.herokuapp.com/api/users/login/user
+Content-Type: application/json
+
+{
+    "user_name": "naomi.quiroz.purizaca@gmail.com",
+    "password": "NQ9951-CH"
+}
+
+###
+PUT http://localhost:8000/api/products/prices/0.9
+Content-Type: application/json

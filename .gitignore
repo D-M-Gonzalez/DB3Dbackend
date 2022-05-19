@@ -1,0 +1,8 @@
+#enviroment variables
+.env
+
+#node
+node_modules
+
+#requests
+requests

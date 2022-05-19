@@ -1,0 +1,69 @@
+###
+POST http://localhost:8000/api/products
+Content-Type: application/json
+
+{
+    "name": "Ford Ka",
+    "category": "Sedan",
+    "description": "un auto mas moderno",
+    "image_url": "algo",
+    "price": 8000,
+    "brand": {
+        "brand_name": "ford"
+    }
+
+}
+
+###
+POST http://localhost:8000/api/brands
+Content-Type: application/json
+
+{
+    "brand_name": "peugeot",
+    "logo_url": "https://www.nicepng.com/png/detail/397-3975917_logo-della-peugeot-peugeot-logo-png.png"
+}
+
+###
+GET https://webshop-example-backend.herokuapp.com//api/products
+
+###
+GET http://localhost:8000/api/brands
+
+###
+GET http://localhost:8000/api/products/623556abc4d1bb7e144e8b0e
+
+###
+DELETE http://localhost:8000/api/products/6234e6662f5cf0f8b43127e1
+
+###
+PUT http://localhost:8000/api/products/6234eb6f7e37549ad8a74d32
+Content-Type: application/json
+
+{
+    "brand": {
+        "brand_name": "ford"
+    }
+}
+
+###
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "user_name": "admin",
+    "password": "123456"
+}
+
+###
+GET http://localhost:8000/api/users
+
+###
+DELETE http://localhost:8000/api/users/623639d8f45cc1368422ad7a
+
+###
+PUT http://localhost:8000/api/users/62363a28f45cc1368422ad81
+Content-Type: application/json
+
+{
+    "password": "123456"
+}
