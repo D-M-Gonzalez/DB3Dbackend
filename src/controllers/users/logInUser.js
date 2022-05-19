@@ -31,8 +31,9 @@ export const logInUser = async (req, res) => {
         response.setStatusMessage(401);
       }
     } catch (error) {
+      console.log(error)
       response.setStatusMessage(500);
     }
   }
   res.json(response); //returns the entire object with the stored status and data
-};
+}
