@@ -28,8 +28,8 @@ POST http://localhost:8000/api/users
 Content-Type: application/json
 
 {
-    "user_name": "naomi.quiroz.purizaca@gmail.com",
-    "password": "NQ9951-CH"
+    "user_name": "dami.m.gonza@gmail.com",
+    "password": "Ka82lk-27202"
 }
 
 ###
