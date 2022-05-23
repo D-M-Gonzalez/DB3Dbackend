@@ -18,8 +18,11 @@ export default class UserMessage {
     }
     setData(docData,token){ //Stores the document data
         this.data.id = docData.id;
-        this.data.user_name = docData.user_name;
+        this.data.email = docData.email;
         this.data.password = docData.password;
+        this.data.name = docData.name;
+        this.data.surname = docData.surname;
+        this.data.phone = docData.phone;
         this.data.accessToken = token;
     }
 }

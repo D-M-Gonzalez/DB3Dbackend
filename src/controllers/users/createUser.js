@@ -5,15 +5,18 @@ import bcrypt from "bcrypt";
 //Controller used to create a new user
 export const createUser = async (req, res) => {
   const response = new UserMessage("create");
-  if (!req.body.user_name) {
+  if (!req.body.email) {
     response.setStatusMessage(406);
   }
   try {
-    const checkRepeated = await User.exists({ user_name: req.body.user_name });
+    const checkRepeated = await User.exists({ email: req.body.email });
     if (!checkRepeated) { //doesn't allow repeated usernames
       const newUser = new User({
-        user_name: req.body.user_name,
+        email: req.body.email,
         password: req.body.password,
+        name: req.body.name,
+        surname: req.body.surname,
+        phone: req.body.phone,
       });
       const salt = await bcrypt.genSalt(10);
       newUser.password = await bcrypt.hash(newUser.password, salt)

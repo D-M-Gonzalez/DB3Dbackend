@@ -28,6 +28,7 @@ const productsSchema = new Schema({
         type: String,
         default: ""
     },
+    colors: [String],
     tags: [String],
     date: {
         type: Date,

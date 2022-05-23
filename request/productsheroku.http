@@ -50,7 +50,7 @@ POST http://localhost:8000/api/users
 Content-Type: application/json
 
 {
-    "user_name": "admin",
+    "email": "admin",
     "password": "123456"
 }
 

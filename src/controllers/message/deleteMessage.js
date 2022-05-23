@@ -1,12 +1,12 @@
 import Message from "../../models/message";
 import MessageMessage from "../../messages/messageMessages";
 
-//Controller used to update an existing user
-export const updateMessage = async (req, res) => {
-  const response = new MessageMessage("update");
+//Controller used to delete a product
+export const deleteMessage = async (req, res) => {
+  const response = new MessageMessage("delete"); //message object with initial message delete
   if (req.params.id && req.user) {
     try {
-      const doc = await Message.findByIdAndUpdate(req.params.id, req.body);
+      const doc = await Message.findByIdAndDelete(req.params.id);
       if (doc) {
         response.setStatusMessage(200);
         response.setData(doc);
@@ -14,7 +14,7 @@ export const updateMessage = async (req, res) => {
         response.setStatusMessage(404);
       }
     } catch (error) {
-      error.kind === "ObjectId" //returns different message for wrong id format and general server errors
+      error.kind === "ObjectId"
         ? response.setStatusMessage(400)
         : response.setStatusMessage(500);
     }
@@ -22,4 +22,4 @@ export const updateMessage = async (req, res) => {
     response.setStatusMessage(406);
   }
   res.json(response); //returns the entire object with the stored status and data
-};
+}

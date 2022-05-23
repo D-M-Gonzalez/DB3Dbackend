@@ -6,11 +6,11 @@ import bcrypt from "bcrypt";
 //Controller used to validate an user login request using JWT token
 export const logInUser = async (req, res) => {
   const response = new UserMessage("validate");
-  if (!req.body.user_name || !req.body.password) {
+  if (!req.body.email || !req.body.password) {
     response.setStatusMessage(406);
   } else {
     try {
-      const checkUser = await User.findOne({ user_name: req.body.user_name });
+      const checkUser = await User.findOne({ email: req.body.email });
       const checkPassword = await bcrypt.compare(req.body.password, checkUser.password);
       const token = jwt.sign(
         {
@@ -24,14 +24,11 @@ export const logInUser = async (req, res) => {
 
       if (checkUser && checkPassword) {
         response.setStatusMessage(200);
-        checkUser.user_name === "dami.m.gonza@gmail.com" ?  //If user is admin, send a token to the client
-        response.setData(checkUser, token) : 
-        response.setData(checkUser);
+        response.setData(checkUser, token);
       } else {
         response.setStatusMessage(401);
       }
     } catch (error) {
-      console.log(error)
       response.setStatusMessage(500);
     }
   }

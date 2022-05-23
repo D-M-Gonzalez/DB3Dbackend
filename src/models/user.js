@@ -3,14 +3,28 @@ import mongoosePaginate from "mongoose-paginate-v2";
 
 //User schema and model definition
 const userSchema = new Schema({
-    user_name: {
+    email: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     password: {
         type: String,
         required: true    
-    }
+    },
+    name:{
+        type: String,
+        trim: true,
+    },
+    surname:{
+        type: String,
+        trim: true,
+    },
+    phone:{
+        type: String,
+        trim: true,
+    },
+    orders:[]
 },{
     versionKey: false,
     timestamps: true

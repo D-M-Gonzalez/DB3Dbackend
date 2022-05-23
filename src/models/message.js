@@ -2,7 +2,7 @@ import {Schema,model} from "mongoose";
 
 //Product schema definition with a child brand
 const messageSchema = new Schema({
-    message: {
+    text: {
         type: String,
         required: true,
         trim: true

@@ -28,7 +28,7 @@ POST http://localhost:8000/api/users
 Content-Type: application/json
 
 {
-    "user_name": "dami.m.gonza@gmail.com",
+    "email": "dami.m.gonza@gmail.com",
     "password": "Ka82lk-27202"
 }
 
@@ -51,7 +51,7 @@ POST http://localhost:8000/api/users/login/user
 Content-Type: application/json
 
 {
-    "user_name": "naomi.quiroz.purizaca@gmail.com",
+    "email": "naomi.quiroz.purizaca@gmail.com",
     "password": "NQ9951-CH"
 }
 
@@ -63,7 +63,7 @@ POST https://regalitosnao-backend.herokuapp.com/api/users/login/user
 Content-Type: application/json
 
 {
-    "user_name": "naomi.quiroz.purizaca@gmail.com",
+    "email": "naomi.quiroz.purizaca@gmail.com",
     "password": "NQ9951-CH"
 }
 

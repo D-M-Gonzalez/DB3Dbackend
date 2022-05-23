@@ -1,15 +1,15 @@
-import Message from "../../models/message";
-import MessageMessage from "../../messages/messageMessages";
+import Order from '../../models/order';
+import OrderMessage from '../../messages/orderMessages';
 
-//Controller used to update an existing user
-export const updateMessage = async (req, res) => {
-  const response = new MessageMessage("update");
-  if (req.params.id && req.user) {
+//Controller used to return a single product
+export const getOrderById = async (req, res) => {
+  const response = new OrderMessage("locate"); //message object with initial message locate
+  if (req.params.id) {
     try {
-      const doc = await Message.findByIdAndUpdate(req.params.id, req.body);
-      if (doc) {
+      const order = await Order.findById(req.params.id);
+      if (order) {
         response.setStatusMessage(200);
-        response.setData(doc);
+        response.setData(order);
       } else {
         response.setStatusMessage(404);
       }
