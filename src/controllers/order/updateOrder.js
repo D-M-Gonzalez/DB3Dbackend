@@ -1,5 +1,4 @@
 import Order from '../../models/order';
-import User from '../../models/user';
 import OrderMessage from '../../messages/orderMessages';
 
 //Controller used to delete a order
@@ -9,14 +8,6 @@ export const updateOrder = async (req, res) => {
     try {
       const doc = await Order.findByIdAndUpdate(req.params.id, req.body);
       if (doc) {
-        const updateUser = await User.findOne({ email: doc.email })
-        let newProductsArray = [];
-        updateUser.products.forEach((product)=>{
-            product.id !== req.params.id && newProductsArray.push(product)
-        })
-        newProductsArray.push(doc);
-        updateUser.products = newProductsArray;
-        const saveUser = await updateUser.save();
         response.setStatusMessage(200);
         response.setData(doc);
       } else {

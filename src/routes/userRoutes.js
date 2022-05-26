@@ -2,6 +2,7 @@ import { Router } from "express";
 import { createUser } from "../controllers/users/createUser";
 import { deleteUser } from "../controllers/users/deleteUser";
 import { findAllUsers } from "../controllers/users/findAllUsers";
+import { findUserById } from "../controllers/users/findUserById";
 import { logInUser } from "../controllers/users/logInUser";
 import { updateUser } from "../controllers/users/updateUser";
 import { validateUser } from "../controllers/users/validateUser";
@@ -13,6 +14,8 @@ const router = Router();
 router.get('/',findAllUsers); //Gets all the users stored in the DB
 
 router.post('/',createUser); //Creates a new user
+
+router.get('/:id',verifyToken,findUserById) //Find an user by it's id
 
 router.put('/:id',verifyToken,updateUser); //Modifies an user by it's id as a parameter, requires token
 

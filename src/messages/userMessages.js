@@ -23,6 +23,7 @@ export default class UserMessage {
         this.data.name = docData.name;
         this.data.surname = docData.surname;
         this.data.phone = docData.phone;
+        this.data.orders= docData.orders;
         this.data.accessToken = token;
     }
 }

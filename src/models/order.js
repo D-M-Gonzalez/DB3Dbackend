@@ -22,29 +22,15 @@ const orderSchema = new Schema({
         required: true,
         trim: true,
     },
-    products: [
-        {
-            id:{
-                type: String,
-                required: true,
-                trim: true,               
-            },
-            qty:{
-                type: Number,
-                required: true,
-            },
-            color:{
-                type: String,
-                required: true,
-                trim: true,  
-            },
-            price:{
-                type: String,
-                required: true,
-                trim: true,
-            }
-        }
-    ]
+    date: {
+        type: Date,
+    },
+    status: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    products: []
 })
 
 //Order model export

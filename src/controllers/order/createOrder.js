@@ -4,8 +4,7 @@ import OrderMessage from '../../messages/orderMessages';
 
 //Controller used to create a new message
 export const createOrder = async (req, res) => {
-  const response = new MessageOrder("create"); //message object with initial order create
-  //req.user
+  const response = new OrderMessage("create"); //message object with initial order create
 
   if (!req.body.email || req.body.products.length < 1) {
     response.setStatusMessage(406);
@@ -16,6 +15,8 @@ export const createOrder = async (req, res) => {
       surname: req.body.surname,
       phone: req.body.phone,
       email: req.body.surname,
+      date: new Date(),
+      status: "Pendiente",
       products:[],
     });
     req.body.products.forEach((product)=>{

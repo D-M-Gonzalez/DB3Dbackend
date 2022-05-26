@@ -9,6 +9,8 @@ export default class ProductMessage {
             surname: "",
             phone: "",
             email: "",
+            date: "",
+            status: "",
             products: [],
         }
     }
@@ -23,7 +25,13 @@ export default class ProductMessage {
         this.status === 504 && (this.message = `Gateway Time-Out when doing ${this.message} order`);
     }
     setData(docData){ //Stores the document data
-        this.data.id = docData.id;
-        this.data.text = docData.text;
+        this.data.id= docData.id;
+        this.data.name = docData.name;
+        this.data.surname = docData.surname;
+        this.data.phone = docData.phone;
+        this.data.email = docData.email;
+        this.data.date = docData.date;
+        this.data.status = docData.status;
+        this.data.products = docData.products;
     }
 }
