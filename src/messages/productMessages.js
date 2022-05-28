@@ -16,13 +16,13 @@ export default class ProductMessage {
     }
     setStatusMessage(code){ //Setups a generic message depending on the status passed
         this.status = code
-        this.status === 200 && (this.message = `Product ${this.message}d successfully`);
-        this.status === 400 && (this.message = `Invalid parameters when doing ${this.message} product`);
-        this.status === 406 && (this.message = `Missing parameters to ${this.message} product`);
-        this.status === 404 && (this.message = `Product not found`);
-        this.status === 401 && (this.message = `Invalid credentials to ${this.message} product to database`);
-        this.status === 500 && (this.message = `Unexpected error when doing ${this.message} product`);
-        this.status === 504 && (this.message = `Gateway Time-Out when doing ${this.message} product`);
+        this.status === 200 && (this.message = `Producto ${this.message}do con éxito`);
+        this.status === 400 && (this.message = `Parámetros inválidos para ${this.message}r producto`);
+        this.status === 406 && (this.message = `Faltan parámetros para ${this.message}r producto`);
+        this.status === 404 && (this.message = `Producto no encontrado`);
+        this.status === 401 && (this.message = `Credenciales inválidas para realizar ${this.message}r producto`);
+        this.status === 500 && (this.message = `Error desconocido al ${this.message}r producto`);
+        this.status === 504 && (this.message = `Tiempo de espera superado al hacer ${this.message}r producto`);
     }
     setData(docData){ //Stores the document data
         this.data.id = docData.id;
