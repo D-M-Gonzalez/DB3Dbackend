@@ -1,9 +1,9 @@
 import Product from "../../models/product";
-import { getPagination } from "../../libs/getPagination";
 import ProductMessage from "../../messages/productMessages";
 import filterBySearch from "../../libs/filterBySearch";
 import filterByCategory from "../../libs/filterByCategory";
 import filterBySubCategory from "../../libs/filterBySubCategory";
+import sortProducts from "../../libs/sortProducts";
 
 //Controller used to return all the products
 export const findAllProducts = async (req, res) => {
@@ -12,14 +12,15 @@ export const findAllProducts = async (req, res) => {
     total: 0
   };
   try {
-    const { page, size, category, subcategory, search} = req.query;
+    const { page, size, category, subcategory, search, sort} = req.query;
     const allProducts = await Product.find()
 
     const filteredBySearch = filterBySearch(allProducts,search)
     const filteredByCat = filterByCategory(filteredBySearch,category)
     const filteredBySubCat = filterBySubCategory(filteredByCat,subcategory)
+    const sortedProducts = sortProducts(filteredBySubCat,sort)
 
-    const paginatedProducts = filteredBySubCat.slice((size*(page-1)),(size*page))
+    const paginatedProducts = sortedProducts.slice((size*(page-1)),(size*page))
     response.items = paginatedProducts.map((el) => {
       const doc = new ProductMessage("locate"); //message object for every index with initial message locate
       doc.setStatusMessage(200);
