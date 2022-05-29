@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 
 //Controller used to validate an user login request using JWT token
 export const logInUser = async (req, res) => {
-  const response = new UserMessage("validate");
+  const response = new UserMessage("ingresa");
   if (!req.body.email || !req.body.password) {
     response.setStatusMessage(406);
   } else {

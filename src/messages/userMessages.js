@@ -14,6 +14,7 @@ export default class UserMessage {
         this.status === 401 && (this.message = `Credenciales inválidas para realizar ${this.message}r usuario`);
         this.status === 500 && (this.message = `Error desconocido al ${this.message}r usuario`);
         this.status === 504 && (this.message = `Tiempo de espera superado al hacer ${this.message}r usuario`);
+        this.status === 409 && (this.message = `No se puede ${this.message}r usuario debido a que ya existe uno registrado`);
     }
     setData(docData,token){ //Stores the document data
         this.data.id = docData.id;
