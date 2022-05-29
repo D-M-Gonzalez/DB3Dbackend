@@ -24,7 +24,7 @@ export default class ProductMessage {
     }
 }
 
-//crea
-//elimina
-//modifica
-//busca
+//"crea"
+//"elimina"
+//"modifica"
+//"busca"

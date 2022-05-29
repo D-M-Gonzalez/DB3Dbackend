@@ -3,7 +3,7 @@ import OrderMessage from '../../messages/orderMessages';
 
 //Controller used to return a single product
 export const getOrderById = async (req, res) => {
-  const response = new OrderMessage("locate"); //message object with initial message locate
+  const response = new OrderMessage("busca"); //message object with initial message locate
   if (req.params.id) {
     try {
       const order = await Order.findById(req.params.id);

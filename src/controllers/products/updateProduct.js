@@ -3,7 +3,7 @@ import ProductMessage from "../../messages/productMessages";
 
 //Controller used to update a product, and it's brand if necessary
 export const updateProduct = async (req, res) => {
-  const response = new ProductMessage("update"); //message object with initial message update
+  const response = new ProductMessage("modifica"); //message object with initial message update
   const date = new Date();
   if (req.params.id && req.user) {
     try {

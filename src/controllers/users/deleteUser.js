@@ -3,7 +3,7 @@ import UserMessage from "../../messages/userMessages";
 
 //Controller used to delete an user
 export const deleteUser = async (req, res) => {
-  const response = new UserMessage("delete");
+  const response = new UserMessage("elimina");
   if (req.params.id && req.user) {
     try {
       const doc = await User.findByIdAndDelete(req.params.id);

@@ -3,7 +3,7 @@ import ProductMessage from "../../messages/productMessages";
 
 //Controller used to create a new product
 export const createProduct = async (req, res) => {
-  const response = new ProductMessage("create"); //message object with initial message create
+  const response = new ProductMessage("crea"); //message object with initial message create
   const date = new Date();
 
   if (!req.body.name || !req.body.price || !req.body.category || !req.body.subcategory) {

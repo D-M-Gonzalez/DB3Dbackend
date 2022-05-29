@@ -3,7 +3,7 @@ import UserMessage from "../../messages/userMessages";
 
 //Controller used to return a single product
 export const findUserById = async (req, res) => {
-  const response = new UserMessage("locate"); //message object with initial message locate
+  const response = new UserMessage("busca"); //message object with initial message locate
   if (req.params.id && req.user) {
     try {
       const user = await User.findById(req.params.id);

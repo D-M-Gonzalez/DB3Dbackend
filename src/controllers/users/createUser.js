@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 //Controller used to create a new user
 export const createUser = async (req, res) => {
-  const response = new UserMessage("create");
+  const response = new UserMessage("crea");
   if (!req.body.email) {
     response.setStatusMessage(406);
   }

@@ -7,14 +7,14 @@ export const getAllMessages = async (req, res) => {
   try {
     const list = await Message.find()
     response = list.docs.map((el) => {
-      const doc = new MessageMessage("locate");
+      const doc = new MessageMessage("busca");
       doc.setStatusMessage(200);
       doc.setData(el);
       return doc;
     });
     res.json(response); //returns the entire object array with the stored status and data
   } catch (error) {
-    const singleResponse = new MessageMessage("locate");
+    const singleResponse = new MessageMessage("busca");
     singleResponse.setStatusMessage(500);
     res.json(singleResponse); //returns the entire object with the stored status and data
   }

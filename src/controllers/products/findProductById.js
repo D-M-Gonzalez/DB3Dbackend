@@ -3,7 +3,7 @@ import ProductMessage from "../../messages/productMessages";
 
 //Controller used to return a single product
 export const findProductById = async (req, res) => {
-  const response = new ProductMessage("locate"); //message object with initial message locate
+  const response = new ProductMessage("busca"); //message object with initial message locate
   if (req.params.id) {
     try {
       const product = await Product.findById(req.params.id);

@@ -3,7 +3,7 @@ import MessageMessage from "../../messages/messageMessages";
 
 //Controller used to update an existing user
 export const updateMessage = async (req, res) => {
-  const response = new MessageMessage("update");
+  const response = new MessageMessage("modifica");
   if (req.params.id && req.user) {
     try {
       const doc = await Message.findByIdAndUpdate(req.params.id, req.body);

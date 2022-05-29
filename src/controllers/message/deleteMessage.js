@@ -3,7 +3,7 @@ import MessageMessage from "../../messages/messageMessages";
 
 //Controller used to delete a product
 export const deleteMessage = async (req, res) => {
-  const response = new MessageMessage("delete"); //message object with initial message delete
+  const response = new MessageMessage("elimina"); //message object with initial message delete
   if (req.params.id && req.user) {
     try {
       const doc = await Message.findByIdAndDelete(req.params.id);

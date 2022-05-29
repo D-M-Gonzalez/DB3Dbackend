@@ -22,7 +22,7 @@ export const findAllProducts = async (req, res) => {
 
     const paginatedProducts = sortedProducts.slice((size*(page-1)),(size*page))
     response.items = paginatedProducts.map((el) => {
-      const doc = new ProductMessage("locate"); //message object for every index with initial message locate
+      const doc = new ProductMessage("busca"); //message object for every index with initial message locate
       doc.setStatusMessage(200);
       doc.setData(el);
       return doc;
@@ -33,7 +33,7 @@ export const findAllProducts = async (req, res) => {
     res.json(response); //returns the entire object array with the stored status and data*/
   } catch (error) {
     console.log(error)
-    const singleResponse = new ProductMessage("locate"); //message object with inital message locate
+    const singleResponse = new ProductMessage("busca"); //message object with inital message locate
     singleResponse.setStatusMessage(500);
     res.json(singleResponse); //returns the entire object with the stored status and data
   }

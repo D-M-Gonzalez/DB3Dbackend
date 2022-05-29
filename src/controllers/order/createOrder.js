@@ -4,7 +4,7 @@ import OrderMessage from '../../messages/orderMessages';
 
 //Controller used to create a new message
 export const createOrder = async (req, res) => {
-  const response = new OrderMessage("create"); //message object with initial order create
+  const response = new OrderMessage("crea"); //message object with initial order create
 
   if (!req.body.email || req.body.products.length < 1) {
     response.setStatusMessage(406);

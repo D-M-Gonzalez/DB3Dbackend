@@ -3,7 +3,7 @@ import OrderMessage from '../../messages/orderMessages';
 
 //Controller used to delete a order
 export const updateOrder = async (req, res) => {
-  const response = new OrderMessage("delete"); //message object with initial message delete
+  const response = new OrderMessage("elimina"); //message object with initial message delete
   if (req.params.id && req.user) {
     try {
       const doc = await Order.findByIdAndUpdate(req.params.id, req.body);

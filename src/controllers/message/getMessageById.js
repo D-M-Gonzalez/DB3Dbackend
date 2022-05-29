@@ -3,7 +3,7 @@ import MessageMessage from "../../messages/messageMessages";
 
 //Controller used to return a single product
 export const getMessageById = async (req, res) => {
-  const response = new MessageMessage("locate"); //message object with initial message locate
+  const response = new MessageMessage("busca"); //message object with initial message locate
   if (req.params.id) {
     try {
       const message = await Message.findById(req.params.id);

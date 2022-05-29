@@ -10,14 +10,14 @@ export const findAllUsers = async (req, res) => {
     const { limit, offset } = getPagination(page, size);
     const list = await User.paginate({}, { offset, limit });
     response = list.docs.map((el) => {
-      const doc = new UserMessage("locate");
+      const doc = new UserMessage("busca");
       doc.setStatusMessage(200);
       doc.setData(el);
       return doc;
     });
     res.json(response); //returns the entire object array with the stored status and data
   } catch (error) {
-    const singleResponse = new UserMessage("locate");
+    const singleResponse = new UserMessage("busca");
     singleResponse.setStatusMessage(500);
     res.json(singleResponse); //returns the entire object with the stored status and data
   }

@@ -10,14 +10,14 @@ export const getAllOrders = async (req, res) => {
     const { limit, offset } = getPagination(page, size);
     const list = await Order.paginate({}, { offset, limit });
     response = list.docs.map((el) => {
-      const doc = new OrderMessage("locate");
+      const doc = new OrderMessage("busca");
       doc.setStatusMessage(200);
       doc.setData(el);
       return doc;
     });
     res.json(response); //returns the entire object array with the stored status and data
   } catch (error) {
-    const singleResponse = new OrderMessage("locate");
+    const singleResponse = new OrderMessage("busca");
     singleResponse.setStatusMessage(500);
     res.json(singleResponse); //returns the entire object with the stored status and data
   }
