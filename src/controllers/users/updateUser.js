@@ -6,7 +6,7 @@ export const updateUser = async (req, res) => {
   const response = new UserMessage("modifica");
   if (req.params.id && req.user) {
     try {
-      const doc = await User.findByIdAndUpdate(req.params.id, req.body);
+      const doc = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
       if (doc) {
         response.setStatusMessage(200);
         response.setData(doc);
